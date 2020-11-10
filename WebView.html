@@ -12,19 +12,13 @@
 			-ms-user-select: none;
 		}
 
-		/* button {
-			width: auto;
-			border: none;
-			position: static;
-		} */
-
 		button {
 			font-size: 20px;
 		}
 
 		.btn_person {
 			height: 300px;
-			width:150px;
+			width: 150px;
 			display: flex;
 			flex-direction: column;
 			/* flex-wrap: wrap; */
@@ -34,17 +28,7 @@
 		.btn_person_child {
 			height: 40px;
 			width: 100px;
-			margin:3px auto;
-		}
-
-		/* button:first-child:nth-last-child(n),
-		button:first-child:nth-last-child(n)~li {
-			height: (1 / n * 100%);
-		} */
-
-		.img {
-			width: 30px;
-			height: 30px;
+			margin: auto auto;
 		}
 
 		/* ======================================스크롤바 css====================================== */
@@ -64,6 +48,7 @@
 			border-radius: 10px;
 			box-shadow: inset 0px 0px 5px white;
 		}
+
 		/* ============================================================================================== */
 	</style>
 </head>
@@ -72,39 +57,21 @@
 	<div id="container" style="height:280px">
 		<table style="height:100%">
 			<th style="height:100%">
-				<!-- <div class="btn_person" style="height:400px"> -->
-				<div class="btn_person" >
-					<!-- <div class="btn_person_child"><button id="1" onclick="button_click(id)"><img
-								src="icon/applemango.jpg" class="img"></button></div>
-					<div class="btn_person_child"><button id="2" onclick="button_click(id)"><img
-								src="icon/lightgreen.PNG" class="img"></button></div> -->
-					<div class="btn_person_child"><button id="1" onclick="button_click(id)">버튼1</button></div>
-					<div class="btn_person_child"><button id="2" onclick="button_click(id)">버튼2</button></div>
-					<div class="btn_person_child"><button id="3" onclick="button_click(id)">버튼3</button></div>
-					<div class="btn_person_child"><button id="4" onclick="button_click(id)">버튼4</button></div>
-					<div class="btn_person_child"><button id="5" onclick="button_click(id)">버튼5</button></div>
-					<div class="btn_person_child"><button id="6" onclick="button_temp(id)">버튼6</button></div>
-					<div class="btn_person_child"><button id="7" onclick="button_temp(id)">버튼7</button></div>
-					<div class="btn_person_child"><button id="8" onclick="button_temp(id)">버튼8</button></div>
-					<div class="btn_person_child"><button id="9" onclick="button_temp(id)">버튼9</button></div>
-					<div class="btn_person_child"><button id="10" onclick="button_temp(id)">버튼10</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
-					<div class="btn_person_child"><button>버튼17</button></div>
+				<div class="btn_person">
+					<div class="btn_person_child"><button id="1" onclick="button_click(id)">사람1</button></div>
+					<div class="btn_person_child"><button id="2" onclick="button_click(id)">사람2</button></div>
+					<div class="btn_person_child"><button id="3" onclick="button_click(id)">사람3</button></div>
+					<div class="btn_person_child"><button id="4" onclick="button_click(id)">사람4</button></div>
+					<div class="btn_person_child"><button id="5" onclick="button_click(id)">사람5</button></div>
+					<!-- <div class="btn_person_child"><button id="6" onclick="button_temp(id)">사람6</button></div>
+					<div class="btn_person_child"><button id="7" onclick="button_temp(id)">사람7</button></div>
+					<div class="btn_person_child"><button id="8" onclick="button_temp(id)">사람8</button></div>
+					<div class="btn_person_child"><button id="9" onclick="button_temp(id)">사람9</button></div>
+					<div class="btn_person_child"><button id="10" onclick="button_temp(id)">사람10</button></div> -->
 				</div>
-
 			</th>
-			<th style="width:75%;">
+		
+			<th style="width:85%;">
 				<canvas id="canvas"></canvas>
 			</th>
 		</table>
@@ -122,10 +89,10 @@
 			myHorizontalBar.update();
 		}
 
-		function button_temp(id){
-			myHorizontalBar.data.datasets[Number(id)-6].data[0]--;
-			myHorizontalBar.update();
-		}
+		// function button_temp(id) {
+		// 	myHorizontalBar.data.datasets[Number(id) - 6].data[0]--;
+		// 	myHorizontalBar.update();
+		// }
 
 		function reload_click() {
 			window.location.reload(true);
@@ -138,7 +105,7 @@
 				{
 					label: '사람 1',
 					backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-					borderColor: window.chartColors.red,
+					//borderColor: window.chartColors.red,
 					// borderWidth: 1,
 					data: [0]
 				},
@@ -176,8 +143,6 @@
 				type: 'horizontalBar',
 				data: horizontalBarChartData,
 				options: {
-					// Elements options apply to all of the options unless overridden in a dataset
-					// In this case, we are setting the border of each horizontal bar to be 2px wide
 					elements: {
 						rectangle: {
 							//borderWidth: 2,
@@ -187,7 +152,7 @@
 					title: {
 						display: true,
 						text: '물 마신 횟수',
-						fontSize:20,
+						fontSize: 20,
 					},
 					scales: {
 						xAxes: [{
